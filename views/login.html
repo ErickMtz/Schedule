@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="company" ng-controller="MainController" >
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/login_main.css">
+
+</head>
+<body>
+    <div ng-include = "'views/partials/menu.html'"></div>
+    
+    <div class="login_form">
+        <div class="parent">
+        <form action="/login" method="post">
+            <p class="title">
+                Login
+            </p>
+            <p class="message">
+                    Coloca tu usuario y contraseña para gestionar el horario.
+            </p>
+
+            <!-- show any messages that come back with authentication -->
+            <% if (message.length > 0) { %>
+                <div class="alert alert-danger login_container"><%= message %></div>
+            <% } %>
+            
+                
+                <div class="container login_container">
+                    <input type="username" name="username" placeholder="Username" class="input" href="https://design.google.com/icons/#ic_lock_outline">
+                   
+                </div>
+
+                <div class="container login_container">
+                    <input type="password" name="password" placeholder="Password" class="input">
+                    
+                </div>
+
+                <div class="container login_container">
+                    <button type"submit" class="button">
+                        Login
+                    </button>
+                </div>
+            
+            <div>
+                <a href="http://www.google.com" class="link">Forgot password?</a>
+            </div>
+        </form>
+        </div>
+    </div>
+    
+    <div ng-include = "'views/partials/footer.html'"></div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="angular/angular.min.js"></script>
+    <script type="text/javascript" src="public/app.js"></script>
+
+</body>
+</html>

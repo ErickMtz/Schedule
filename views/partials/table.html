@@ -8,11 +8,20 @@
 					<th class="tableHead">Nombre</th>
 					<th class="tableHead">Horario</th>
 					<th class="tableHead">Profesor</th>
+					<th class="tableHead">Salón</th>
 				</tr>
-			</thead> 
+			</thead>
 			<tbody >
-			
-			</tbody>
+				<tr ng-repeat="subject in subjects">
+					<td ng-show=false ng-model="row_subject_id">{{subject.id}}</td>
+					<td>{{subject.subject_key}}</td>
+					<td>{{subject.subject_group}}</td>
+					<td>{{subject.subject_name}}</td>
+					<td>{{subject.schedule}}</td>
+					<td>{{subject.teacher}}</td>
+					<td>{{subject.classroom}}</td>
+				</tr>
+			</tbody> 
 		</table>
 	</div>
 </div>

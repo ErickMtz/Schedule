@@ -5,8 +5,9 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var passport = require('passport');
 var flash    = require('connect-flash');
+var controller = require('./controllers/subject.js');
 
-var port     = process.env.PORT || 8001;
+var port     = process.env.PORT || 8002;
 
 var path = require('path');
 
@@ -48,7 +49,13 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
 require('./app/routes.js')(app,passport); // load our routes and pass in our app and fully configured passport
-require('./app/index_routes.js')(app);
+
+
+app.use('',router);
+
+router.route('/subjects')
+.get(controller.allSubjects);
+
 // launch ======================================================================
 app.listen(port);
 console.log('Running on port ' + port);

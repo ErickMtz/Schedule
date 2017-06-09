@@ -15,4 +15,15 @@ var model = {};
 		}
 	}
 
+	model.findSubject = function(req,res) {
+		var id = req.params.id;
+
+		if (connection) {
+			connection.query("SELECT * FROM subjects WHERE subject_key = '" + id + "'", function(error, rows) {
+				if(error) throw error;
+				res.status(200).jsonp(rows);
+			});
+		}
+	}
+
 module.exports = model;

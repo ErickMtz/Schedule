@@ -56,6 +56,9 @@ app.use('',router);
 router.route('/subjects')
 .get(controller.allSubjects);
 
+router.route('/subjects/:id')
+.get(controller.findSubject);
+
 // launch ======================================================================
 app.listen(port);
 console.log('Running on port ' + port);
